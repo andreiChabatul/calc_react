@@ -1,5 +1,6 @@
 import ControState from '../controlState';
 import Logo from '../logo';
+import OperandorContainer from '../operandorContainer';
 import './index.css';
 
 const MainWindow = () => {
@@ -8,6 +9,7 @@ const MainWindow = () => {
         <div className='main-container'>
             <Logo />
             <ControState />
+            <OperandorContainer />
         </div>
     )
 
