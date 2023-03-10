@@ -2,5 +2,6 @@
     width: 695px;
     height: 640px;
     background: #FFFFFF;
+    border: 2px solid red;
     margin: 20px auto;
 }
