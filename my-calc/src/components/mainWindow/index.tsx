@@ -1,5 +1,6 @@
 import ControState from '../controlState';
 import Display from '../display';
+import DoneArea from '../doneArea';
 import EqualsContainer from '../equalContainer';
 import Logo from '../logo';
 import NumberContainer from '../numberContainer';
@@ -18,6 +19,7 @@ const MainWindow = () => {
                 <NumberContainer />
                 <EqualsContainer />
             </div>
+            <DoneArea />
         </div>
     )
 

@@ -3,6 +3,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 36px 1fr;
     row-gap: 30px;
+    column-gap: 56px;
     width: 695px;
     height: 640px;
     background: var(--COLOR_WHITE_DEFAULT);

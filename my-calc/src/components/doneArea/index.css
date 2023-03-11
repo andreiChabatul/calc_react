@@ -1,0 +1,44 @@
+.done-area-container {
+    width: 243px;
+    height: 448px;
+    border: 2px dashed #C4C4C4;
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-drop {
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: 100%;
+}
+
+.area-drop_content {
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.area-drop_content__title {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--COLOR_BLUE_DEFAULT);
+}
+
+.area-drop_content__text {
+    width: 127px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #6B7280;
+}
