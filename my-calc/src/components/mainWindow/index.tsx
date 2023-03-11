@@ -1,4 +1,5 @@
 import ControState from '../controlState';
+import Display from '../display';
 import EqualsContainer from '../equalContainer';
 import Logo from '../logo';
 import OperandorContainer from '../operandorContainer';
@@ -12,6 +13,7 @@ const MainWindow = () => {
             <ControState />
             <OperandorContainer />
             <EqualsContainer />
+            <Display />
         </div>
     )
 
