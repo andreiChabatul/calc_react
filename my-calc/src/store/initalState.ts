@@ -1,16 +1,12 @@
 
-export enum activeState {
-    constructor = 'constructor',
-    runtime = 'runtime'
-}
 
 export type appState = {
-    activeState: activeState,
+    IsRuntime: boolean,
     displayDrop: boolean,
 }
 
 const initalState: appState = {
-    activeState: activeState.constructor,
+    IsRuntime: false,
     displayDrop: false,
 
 }

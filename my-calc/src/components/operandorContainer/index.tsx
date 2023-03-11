@@ -6,8 +6,8 @@ const OperandorContainer = () => {
 
     return (
         <div className='operandor-container'>
-            {operandorArr.map(oper =>
-                <ItemOperandor value={oper} />
+            {operandorArr.map((oper, index) =>
+                <ItemOperandor value={oper} key={index} />
             )}
         </div>
     )

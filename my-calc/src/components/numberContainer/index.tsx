@@ -6,8 +6,8 @@ const NumberContainer = () => {
 
     return (
         <div className='number-container'>
-            {numberControlArr.map(control =>
-                <ItemNumber value={control} />)
+            {numberControlArr.map((control, index) =>
+                <ItemNumber value={control} key={index} />)
             }
         </div>
     )
