@@ -1,10 +1,10 @@
 
-enum activeState {
+export enum activeState {
     constructor = 'constructor',
     runtime = 'runtime'
 }
 
-type appState = {
+export type appState = {
     activeState: activeState,
     displayDrop: boolean,
 }

@@ -1,14 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import initalState from "./initalState";
-
+import initalState, { activeState, appState } from "./initalState";
 
 const sliceApp = createSlice({
     name: 'change_app',
     initialState: initalState,
     reducers: {
+        change_state(state: appState, action: PayloadAction<activeState>) {
+            state.activeState = action.payload;
+            console.log(state.activeState)
+        }
 
     }
 })
 
 export default sliceApp.reducer;
-export const { } = sliceApp.actions;
+export const { change_state } = sliceApp.actions;
