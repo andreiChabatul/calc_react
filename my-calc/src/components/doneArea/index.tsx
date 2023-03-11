@@ -1,11 +1,43 @@
 import './index.css';
+import { useDrop } from 'react-dnd';
+import { useAppDispatch, useAppSelector } from '../../store';
+import { drop_add } from '../../store/slice';
+import Display from '../display';
+import EqualsContainer from '../equalContainer';
+import { dropItem, TypeJSXElement } from './type';
+import NumberContainer from '../numberContainer';
+import OperandorContainer from '../operandorContainer';
+
 
 const DoneArea = () => {
 
+    const { IsDragMonitor, dropArr } = useAppSelector(state => state.appState)
+    const dispatch = useAppDispatch();
+
+    const [, dropRef] = useDrop({
+        accept: 'button-add',
+        drop: (item: dropItem) => {
+            switch (item.value) {
+                case TypeJSXElement.equal:
+                    dispatch(drop_add(<EqualsContainer />))
+                    break;
+                case TypeJSXElement.display:
+                    dispatch(drop_add(<Display />))
+                    break;
+                case TypeJSXElement.buttonNumber:
+                    dispatch(drop_add(<NumberContainer />))
+                    break;
+                case TypeJSXElement.buttonOperandor:
+                    dispatch(drop_add(<OperandorContainer />))
+                    break;
+            }
+        },
+    });
+
     return (
-        <div className='done-area-container'>
-            <div className='display-drop'></div>
-            <div className='area-drop'>
+        <div className={`done-area-container ${IsDragMonitor ? 'display-drop_drag' : ''}`} ref={dropRef}>
+            {dropArr.map(elem => elem)}
+            {dropArr.length === 0 && <div className='area-drop area-drop_drag'>
                 <div className='area-drop_content'>
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18.7778 1V5.44444" stroke="black" strokeWidth="2" strokeLinecap="round" />
@@ -17,7 +49,7 @@ const DoneArea = () => {
                     <span className='area-drop_content__title'>Перетащите сюда</span>
                     <span className='area-drop_content__text'>любой элемент из левой панели</span>
                 </div>
-            </div>
+            </div>}
         </div>
     )
 

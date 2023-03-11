@@ -4,19 +4,24 @@
     border: 2px dashed #C4C4C4;
     border-radius: 6px;
     position: relative;
+    flex-direction: column;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    gap: 8px;
+    padding: 4px;
+
 }
 
-.display-drop {
-    position: absolute;
-    top: 0;
-    height: 60px;
-    width: 100%;
+
+.display-drop_drag {
+    opacity: .5;
+    border-radius: 6px;
+    background: var(--COLOR_BLUE_DEFAULT);
 }
 
 .area-drop_content {
+    margin-top: 170px;
     height: 84px;
     display: flex;
     flex-direction: column;

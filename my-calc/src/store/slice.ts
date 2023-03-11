@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { TypeJSXElement } from "../components/doneArea/type";
 import initalState, { appState } from "./initalState";
 
 const sliceApp = createSlice({
@@ -7,11 +8,24 @@ const sliceApp = createSlice({
     reducers: {
         change_state(state: appState, action: PayloadAction<boolean>) {
             state.IsRuntime = action.payload;
-            console.log(state.IsRuntime)
-        }
-
+        },
+        drag_monitor(state: appState, action: PayloadAction<boolean>) {
+            state.IsDragMonitor = action.payload;
+        },
+        drop_add(state: appState, action: PayloadAction<JSX.Element>) {
+            state.dropArr = state.dropArr.filter(element => element.type.name !== action.payload.type.name);
+            state.dropArr.push(action.payload);
+            for (let i = 0; i < state.dropArr.length; i++) {
+                if (state.dropArr[i].type.name === TypeJSXElement.display) {
+                    [state.dropArr[0], state.dropArr[i]] = [state.dropArr[i], state.dropArr[0]]
+                }
+            }
+        },
+        delete_element(state: appState, action: PayloadAction<JSX.Element>) {
+            state.dropArr = state.dropArr.filter(element => element.type.name !== action.payload.type.name);
+        },
     }
 })
 
 export default sliceApp.reducer;
-export const { change_state } = sliceApp.actions;
+export const { change_state, drag_monitor, drop_add, delete_element } = sliceApp.actions;

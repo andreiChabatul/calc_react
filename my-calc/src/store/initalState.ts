@@ -2,12 +2,14 @@
 
 export type appState = {
     IsRuntime: boolean,
-    displayDrop: boolean,
+    IsDragMonitor: boolean;
+    dropArr: JSX.Element[],
 }
 
 const initalState: appState = {
     IsRuntime: false,
-    displayDrop: false,
+    IsDragMonitor: false,
+    dropArr: [],
 
 }
 
