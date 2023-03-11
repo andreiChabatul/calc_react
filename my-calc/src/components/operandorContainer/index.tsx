@@ -1,4 +1,4 @@
-import ItemOperandor from '../itemOperandor';
+import ItemOperandor from '../itemOperandorButton';
 import operandorArr from './data/dataOperandor';
 import './index.css';
 

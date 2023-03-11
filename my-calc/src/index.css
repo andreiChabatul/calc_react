@@ -3,6 +3,7 @@
   --COLOR_GRAY_DEFAULT: #4D5562;
   --COLOR_WHITE_DEFAULT: #FFFFFF;
   --COLOR_GRAY_TWO: #F3F4F6;
+  --DEFAULT_SHADOW: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 html, body, div, span, applet, object, iframe,

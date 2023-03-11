@@ -2,6 +2,7 @@ import ControState from '../controlState';
 import Display from '../display';
 import EqualsContainer from '../equalContainer';
 import Logo from '../logo';
+import NumberContainer from '../numberContainer';
 import OperandorContainer from '../operandorContainer';
 import './index.css';
 
@@ -14,6 +15,7 @@ const MainWindow = () => {
             <OperandorContainer />
             <EqualsContainer />
             <Display />
+            <NumberContainer />
         </div>
     )
 
