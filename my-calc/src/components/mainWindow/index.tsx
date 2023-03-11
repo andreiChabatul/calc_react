@@ -12,10 +12,12 @@ const MainWindow = () => {
         <div className='main-container'>
             <Logo />
             <ControState />
-            <OperandorContainer />
-            <EqualsContainer />
-            <Display />
-            <NumberContainer />
+            <div className='element-constructor'>
+                <Display />
+                <OperandorContainer />
+                <NumberContainer />
+                <EqualsContainer />
+            </div>
         </div>
     )
 

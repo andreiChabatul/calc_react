@@ -6,6 +6,7 @@
     background: #F3F4F6;
     border-radius: 6px;
     display: flex;
+    justify-self: end;
 }
 
 .control-button {

@@ -5,6 +5,7 @@
     text-decoration: none;
     cursor: pointer;
     transition: .4s;
+    height: 36px;
 }
 
 .logo_text {

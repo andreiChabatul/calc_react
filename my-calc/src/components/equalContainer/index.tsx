@@ -4,7 +4,9 @@ const EqualsContainer = () => {
 
     return (
         <div className='equals-container'>
-            <p className='equals_text'>=</p>
+            <div className='equals-container_text'>
+                <p className='equals_text'>=</p>
+            </div>
         </div>
     )
 

@@ -1,13 +1,20 @@
 .equals-container {
-    width: 232px;
+    width: 240px;
+    height: 72px;
+    border-radius: 4px;
+    color: var(--COLOR_WHITE_DEFAULT);
+    background-color: var(--COLOR_WHITE_DEFAULT);
+    padding: 4px;
+}
+
+.equals-container_text {
+    cursor: pointer;
     height: 64px;
     border-radius: 6px;
-    color: var(--COLOR_WHITE_DEFAULT);
     background-color: var(--COLOR_BLUE_DEFAULT);
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     transition: .2s;
 }
 
@@ -18,9 +25,8 @@
     font-size: 20px;
 }
 
-.equals-container:active {
+.equals-container_text:active {
     border: 1px solid #E2E3E5;
     color: var(--COLOR_BLUE_DEFAULT);
     background-color: var(--COLOR_WHITE_DEFAULT);
 }
-
