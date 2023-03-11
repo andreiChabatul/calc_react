@@ -1,0 +1,26 @@
+.equals-container {
+    width: 232px;
+    height: 64px;
+    border-radius: 6px;
+    color: var(--COLOR_WHITE_DEFAULT);
+    background-color: var(--COLOR_BLUE_DEFAULT);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.equals_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.equals-container:active {
+    border: 1px solid #E2E3E5;
+    color: var(--COLOR_BLUE_DEFAULT);
+    background-color: var(--COLOR_WHITE_DEFAULT);
+}
+

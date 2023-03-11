@@ -1,6 +1,7 @@
 :root {
   --COLOR_BLUE_DEFAULT: #5D5FEF;
   --COLOR_GRAY_DEFAULT: #4D5562;
+  --COLOR_WHITE_DEFAULT: #FFFFFF;
 }
 
 html, body, div, span, applet, object, iframe,
