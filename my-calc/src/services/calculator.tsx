@@ -42,7 +42,7 @@ class Calculator {
             }
             this.resultString += value;
             if (this.resultString.length === 1) {
-                if (this.resultString[0] != '-') {
+                if (this.resultString[0] !== '-') {
                     this.resultString = '';
                 }
             }
@@ -88,10 +88,11 @@ class Calculator {
     }
 
     roundNumber(value: string) {
-        let resultString = String(Number(value).toFixed(10)).replace(/0*$/, "");
+        let resultString = String(Number(value).toFixed(13)).replace(/0*$/, "");
         if (resultString[resultString.length - 1] === '.') {
             resultString = resultString.slice(0, -1)
         }
+        resultString = resultString.slice(0, 12)
         return resultString;
     }
 

@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../store';
 import { drop_add } from '../../store/slice';
 import Display from '../display';
 import EqualsContainer from '../equalContainer';
-import { dropItem, TypeJSXElement } from './type';
+import { dropItem, TypeJSXElement } from './../../type';
 import NumberContainer from '../numberContainer';
 import OperandorContainer from '../operandorContainer';
 
@@ -30,13 +30,15 @@ const DoneArea = () => {
                 case TypeJSXElement.buttonOperandor:
                     dispatch(drop_add(<OperandorContainer value={false} />))
                     break;
+                default:
+                    break;
             }
         },
     });
 
     return (
         <div className={`done-area-container ${IsDragMonitor ? 'display-drop_drag' : ''}`} ref={dropRef}>
-            {dropArr.map(elem => elem)}
+            {dropArr.map((elem, index) => <li className='drop-area_li' key={index}>{elem}</li>)}
             {dropArr.length === 0 && <div className='area-drop area-drop_drag'>
                 <div className='area-drop_content'>
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

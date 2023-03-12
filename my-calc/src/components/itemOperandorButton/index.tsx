@@ -1,18 +1,16 @@
 import calculator from '../../services/calculator';
+import { useAppSelector } from '../../store';
 import { propsOperandor } from '../../type';
 import './index.css';
 
 const ItemOperandor = (props: propsOperandor) => {
 
-
-    const clickHandler = () => {
-        console.log(props.value)
-    }
+    const { IsRuntime } = useAppSelector(state => state.appState)
 
     return (
         <div
             id={String(props.value)}
-            onClick={(e) => calculator.setOperandor(e.currentTarget.id)}
+            onClick={(e) => { if (IsRuntime) calculator.setOperandor(e.currentTarget.id) }}
             className='item-operandor-container'>
             <p className='item-operandor_text'>{props.value}</p>
         </div>

@@ -4,7 +4,7 @@ import { operandorArr } from '../../const';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { delete_element, drag_monitor } from '../../store/slice';
 import { JSXdrop } from '../../type';
-import { TypeJSXElement } from '../doneArea/type';
+import { TypeJSXElement } from './../../type';
 import ItemOperandor from '../itemOperandorButton';
 import './index.css';
 
@@ -24,11 +24,11 @@ const OperandorContainer = (props: JSXdrop) => {
 
     useEffect(() => {
         dispatch(drag_monitor(isDragging))
-    }, [isDragging]);
+    }, [isDragging, dispatch]);
 
     return (
         <div
-        ref={!IsDoneArea ? dragRef : null}
+            ref={!IsDoneArea ? dragRef : null}
             className={`operandor-container
             ${isDragging ? 'container_drag' : ''}
             ${props.value && IsDoneArea ? 'container__disabble' : ''}`}

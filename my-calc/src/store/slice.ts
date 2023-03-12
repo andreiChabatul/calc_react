@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TypeJSXElement } from "../components/doneArea/type";
+import { TypeJSXElement } from './../type';
 import initalState, { appState } from "./initalState";
 
 const sliceApp = createSlice({
@@ -8,6 +8,7 @@ const sliceApp = createSlice({
     reducers: {
         change_state(state: appState, action: PayloadAction<boolean>) {
             state.IsRuntime = action.payload;
+            state.resultCalc = '';
         },
         drag_monitor(state: appState, action: PayloadAction<boolean>) {
             state.IsDragMonitor = action.payload;

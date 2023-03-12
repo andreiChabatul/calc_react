@@ -1,3 +1,4 @@
+import { useAppSelector } from '../../store';
 import ControState from '../controlState';
 import Display from '../display';
 import DoneArea from '../doneArea';
@@ -9,11 +10,13 @@ import './index.css';
 
 const MainWindow = () => {
 
+    const { IsRuntime } = useAppSelector(state => state.appState)
+
     return (
         <div className='main-container'>
             <Logo />
             <ControState />
-            <div className='element-constructor'>
+            <div className={`element-constructor ${IsRuntime ? 'element-constructor__disable' : ''}`}>
                 <Display value={true} />
                 <OperandorContainer value={true} />
                 <NumberContainer value={true} />

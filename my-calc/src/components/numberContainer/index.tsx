@@ -3,7 +3,7 @@ import { useDrag } from 'react-dnd';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { delete_element, drag_monitor } from '../../store/slice';
 import { numberControlArr } from '../../const';
-import { TypeJSXElement } from '../doneArea/type';
+import { TypeJSXElement } from './../../type';
 import ItemNumber from '../itemNumberButton';
 import './index.css';
 import { JSXdrop } from '../../type';
@@ -24,7 +24,7 @@ const NumberContainer = (props: JSXdrop) => {
 
     useEffect(() => {
         dispatch(drag_monitor(isDragging))
-    }, [isDragging]);
+    }, [isDragging, dispatch]);
 
     return (
         <div

@@ -13,7 +13,6 @@
 
 }
 
-
 .display-drop_drag {
     opacity: .5;
     border-radius: 6px;
@@ -46,4 +45,8 @@
     font-weight: 400;
     font-size: 12px;
     color: #6B7280;
+}
+
+.drop-area_li {
+    list-style: none;
 }

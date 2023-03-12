@@ -19,6 +19,11 @@
     pointer-events: none;
 }
 
+.element-constructor__disable {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .container_drag {
     background: darkcyan;
 }

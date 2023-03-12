@@ -3,14 +3,14 @@ import { useDrag } from 'react-dnd';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { delete_element, drag_monitor } from '../../store/slice';
-import { TypeJSXElement } from '../doneArea/type';
+import { TypeJSXElement } from './../../type';
 import { JSXdrop } from '../../type';
 import calculator from '../../services/calculator';
 
 const EqualsContainer = (props: JSXdrop) => {
 
     const dispatch = useAppDispatch();
-    const { dropArr } = useAppSelector(state => state.appState);
+    const { dropArr, IsRuntime } = useAppSelector(state => state.appState);
     const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.equal).length);
 
     const [{ isDragging }, dragRef] = useDrag({
@@ -23,11 +23,11 @@ const EqualsContainer = (props: JSXdrop) => {
 
     useEffect(() => {
         dispatch(drag_monitor(isDragging))
-    }, [isDragging]);
+    }, [isDragging, dispatch]);
 
     return (
         <div
-            onClick={() => calculator.egualClick()}
+            onClick={() => { if (IsRuntime) calculator.egualClick() }}
             onDoubleClick={() => dispatch(delete_element(<EqualsContainer />))}
             className={`equals-container
             ${isDragging ? 'container_drag' : ''}

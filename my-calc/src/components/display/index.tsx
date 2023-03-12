@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../store';
 import { delete_element, drag_monitor } from '../../store/slice';
 import { useEffect } from 'react';
 import './index.css';
-import { TypeJSXElement } from '../doneArea/type';
+import { TypeJSXElement } from './../../type';
 import { JSXdrop } from '../../type';
 
 const Display = (props: JSXdrop) => {
@@ -22,7 +22,7 @@ const Display = (props: JSXdrop) => {
 
     useEffect(() => {
         dispatch(drag_monitor(isDragging));
-    }, [isDragging]);
+    }, [isDragging, dispatch]);
 
     return (
         <div
