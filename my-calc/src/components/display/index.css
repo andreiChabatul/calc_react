@@ -17,12 +17,28 @@
     align-items: center;
     justify-content: end;
     padding: 0 8px;
+    position: relative;
 }
 
-.display_text {
+.display_result {
+    position: relative;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 36px;
+    font-size: 24px;
+    color: #111827;
+}
+
+.display_result__text {
+    top: 10px;
+}
+
+
+.display_text {
+    top: 0;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    position: absolute;
+    font-size: 12px;
     color: #111827;
 }

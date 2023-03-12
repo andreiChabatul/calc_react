@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../store';
 import { delete_element, drag_monitor } from '../../store/slice';
 import { TypeJSXElement } from '../doneArea/type';
 import { JSXdrop } from '../../type';
+import calculator from '../../services/calculator';
 
 const EqualsContainer = (props: JSXdrop) => {
 
@@ -26,6 +27,7 @@ const EqualsContainer = (props: JSXdrop) => {
 
     return (
         <div
+            onClick={() => calculator.egualClick()}
             onDoubleClick={() => dispatch(delete_element(<EqualsContainer />))}
             className={`equals-container
             ${isDragging ? 'container_drag' : ''}

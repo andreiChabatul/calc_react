@@ -23,8 +23,17 @@ const sliceApp = createSlice({
         delete_element(state: appState, action: PayloadAction<JSX.Element>) {
             state.dropArr = state.dropArr.filter(element => element.type.name !== action.payload.type.name);
         },
+        set_result(state: appState, action: PayloadAction<string>) {
+            state.result = action.payload;
+        },
+        set_isText(state: appState, action: PayloadAction<boolean>) {
+            state.IsResultText = action.payload;
+        },
+        set_resultCalc(state: appState, action: PayloadAction<string>) {
+            state.resultCalc = action.payload;
+        },
     }
 })
 
 export default sliceApp.reducer;
-export const { change_state, drag_monitor, drop_add, delete_element } = sliceApp.actions;
+export const { change_state, drag_monitor, drop_add, delete_element, set_result, set_isText, set_resultCalc } = sliceApp.actions;

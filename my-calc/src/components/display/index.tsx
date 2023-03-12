@@ -6,12 +6,10 @@ import './index.css';
 import { TypeJSXElement } from '../doneArea/type';
 import { JSXdrop } from '../../type';
 
-
 const Display = (props: JSXdrop) => {
 
-    const value = '011+2';
     const dispatch = useAppDispatch();
-    const { dropArr } = useAppSelector(state => state.appState);
+    const { dropArr, result, IsResultText, resultCalc } = useAppSelector(state => state.appState);
     const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.display).length);
 
     const [{ isDragging }, dragRef] = useDrag({
@@ -35,7 +33,10 @@ const Display = (props: JSXdrop) => {
             `}
             ref={!IsDoneArea ? dragRef : null}>
             <div className='display-text_container'>
-                <p className='display_text'>{value}</p>
+                {IsResultText && <p className='display_text'>{result}</p>}
+                <p className={`display_result ${IsResultText ? 'display_result__text' : ''}`}>
+                    {resultCalc ? resultCalc : '0'}
+                </p>
             </div >
         </div >
     )
