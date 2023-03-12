@@ -1,7 +1,7 @@
+import { propsOperandor } from '../../type';
 import './index.css';
-import IOperandor from './type';
 
-const ItemOperandor = (props: IOperandor) => {
+const ItemOperandor = (props: propsOperandor) => {
 
 
     const clickHandler = () => {

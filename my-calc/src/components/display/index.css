@@ -8,14 +8,6 @@
     padding: 4px;
 }
 
-.container_drag {
-    border: 2px solid var(--COLOR_BLUE_DEFAULT);
-}
-
-.display-container_disabble {
-    pointer-events: none;
-}
-
 .display-text_container {
     width: 232px;
     height: 52px;

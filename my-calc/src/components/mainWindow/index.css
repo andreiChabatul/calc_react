@@ -14,43 +14,16 @@
     position: relative;
 }
 
-.display_dissable {
-    position: absolute;
-    width: 240px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.6);
-    z-index: 2;
+.container__disabble {
+    opacity: .5;
+    pointer-events: none;
 }
 
-.operandor_dissable {
-    top: 75px;
-    position: absolute;
-    width: 240px;
-    height: 56px;
-    background: rgba(255, 255, 255, 0.6);
-    z-index: 2;
-}
-
-.number_dissable {
-    position: absolute;
-    top: 140px;
-    width: 240px;
-    height: 224px;
-    background: rgba(255, 255, 255, 0.6);
-    z-index: 2;
-}
-
-.equal_dissable {
-    position: absolute;
-    bottom: 0px;
-    width: 240px;
-    height: 72px;
-    background: rgba(255, 255, 255, 0.6);
-    z-index: 2;
+.container_drag {
+    background: darkcyan;
 }
 
 .element-constructor {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -1,15 +1,18 @@
 import { useEffect } from 'react';
 import { useDrag } from 'react-dnd';
-import { useAppDispatch } from '../../store';
+import { operandorArr } from '../../const';
+import { useAppDispatch, useAppSelector } from '../../store';
 import { delete_element, drag_monitor } from '../../store/slice';
+import { JSXdrop } from '../../type';
 import { TypeJSXElement } from '../doneArea/type';
 import ItemOperandor from '../itemOperandorButton';
-import operandorArr from './data/dataOperandor';
 import './index.css';
 
-const OperandorContainer = () => {
+const OperandorContainer = (props: JSXdrop) => {
 
     const dispatch = useAppDispatch();
+    const { dropArr } = useAppSelector(state => state.appState);
+    const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.buttonOperandor).length);
 
     const [{ isDragging }, dragRef] = useDrag({
         type: 'button-add',
@@ -25,8 +28,10 @@ const OperandorContainer = () => {
 
     return (
         <div
-            ref={dragRef}
-            className='operandor-container'
+        ref={!IsDoneArea ? dragRef : null}
+            className={`operandor-container
+            ${isDragging ? 'container_drag' : ''}
+            ${props.value && IsDoneArea ? 'container__disabble' : ''}`}
             onDoubleClick={() => dispatch(delete_element(<OperandorContainer />))}
         >
             {operandorArr.map((oper, index) =>

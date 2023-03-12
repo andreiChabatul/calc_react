@@ -1,7 +1,7 @@
+import { propsNumberControl } from '../../type';
 import './index.css';
-import InumberControl from './type';
 
-const ItemNumber = (props: InumberControl) => {
+const ItemNumber = (props: propsNumberControl) => {
 
     return (
         <div className={`item-number-button ${props.value === 0 ? 'item-number-button_null' : ''}`}>

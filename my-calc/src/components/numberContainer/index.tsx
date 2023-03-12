@@ -1,15 +1,18 @@
 import { useEffect } from 'react';
 import { useDrag } from 'react-dnd';
-import { useAppDispatch } from '../../store';
+import { useAppDispatch, useAppSelector } from '../../store';
 import { delete_element, drag_monitor } from '../../store/slice';
+import { numberControlArr } from '../../const';
 import { TypeJSXElement } from '../doneArea/type';
 import ItemNumber from '../itemNumberButton';
-import numberControlArr from './data/dataNumber';
 import './index.css';
+import { JSXdrop } from '../../type';
 
-const NumberContainer = () => {
+const NumberContainer = (props: JSXdrop) => {
 
     const dispatch = useAppDispatch();
+    const { dropArr } = useAppSelector(state => state.appState);
+    const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.buttonNumber).length);
 
     const [{ isDragging }, dragRef] = useDrag({
         type: 'button-add',
@@ -25,8 +28,10 @@ const NumberContainer = () => {
 
     return (
         <div
-            className='number-container'
-            ref={dragRef}
+            className={`number-container
+            ${isDragging ? 'container_drag' : ''}
+            ${props.value && IsDoneArea ? 'container__disabble' : ''}`}
+            ref={!IsDoneArea ? dragRef : null}
             onDoubleClick={() => dispatch(delete_element(<NumberContainer />))}
         >
             {numberControlArr.map((control, index) =>

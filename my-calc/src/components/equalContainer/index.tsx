@@ -1,13 +1,16 @@
 import './index.css';
 import { useDrag } from 'react-dnd';
 import { useEffect } from 'react';
-import { useAppDispatch } from '../../store';
+import { useAppDispatch, useAppSelector } from '../../store';
 import { delete_element, drag_monitor } from '../../store/slice';
 import { TypeJSXElement } from '../doneArea/type';
+import { JSXdrop } from '../../type';
 
-const EqualsContainer = () => {
+const EqualsContainer = (props: JSXdrop) => {
 
     const dispatch = useAppDispatch();
+    const { dropArr } = useAppSelector(state => state.appState);
+    const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.equal).length);
 
     const [{ isDragging }, dragRef] = useDrag({
         type: 'button-add',
@@ -24,7 +27,10 @@ const EqualsContainer = () => {
     return (
         <div
             onDoubleClick={() => dispatch(delete_element(<EqualsContainer />))}
-            className={`equals-container ${isDragging ? 'container_drag' : ''}`} ref={dragRef}>
+            className={`equals-container
+            ${isDragging ? 'container_drag' : ''}
+            ${props.value && IsDoneArea ? 'container__disabble' : ''}`}
+            ref={!IsDoneArea ? dragRef : null}>
             <div className='equals-container_text'>
                 <p className='equals_text'>=</p>
             </div>

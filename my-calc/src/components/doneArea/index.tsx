@@ -19,16 +19,16 @@ const DoneArea = () => {
         drop: (item: dropItem) => {
             switch (item.value) {
                 case TypeJSXElement.equal:
-                    dispatch(drop_add(<EqualsContainer />))
+                    dispatch(drop_add(<EqualsContainer value={false} />))
                     break;
                 case TypeJSXElement.display:
-                    dispatch(drop_add(<Display />))
+                    dispatch(drop_add(<Display value={false} />))
                     break;
                 case TypeJSXElement.buttonNumber:
-                    dispatch(drop_add(<NumberContainer />))
+                    dispatch(drop_add(<NumberContainer value={false} />))
                     break;
                 case TypeJSXElement.buttonOperandor:
-                    dispatch(drop_add(<OperandorContainer />))
+                    dispatch(drop_add(<OperandorContainer value={false} />))
                     break;
             }
         },

@@ -13,7 +13,6 @@ const sliceApp = createSlice({
             state.IsDragMonitor = action.payload;
         },
         drop_add(state: appState, action: PayloadAction<JSX.Element>) {
-            state.dropArr = state.dropArr.filter(element => element.type.name !== action.payload.type.name);
             state.dropArr.push(action.payload);
             for (let i = 0; i < state.dropArr.length; i++) {
                 if (state.dropArr[i].type.name === TypeJSXElement.display) {
