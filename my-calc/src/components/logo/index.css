@@ -1,0 +1,23 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .4s;
+    height: 36px;
+}
+
+.logo_text {
+    color: var(--COLOR_BLUE_DEFAULT);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.logo_img {
+    height: 36px;
+}
+
+.logo-container:hover {
+    transform: scale(1.05);
+}

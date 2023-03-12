@@ -1,0 +1,31 @@
+.item-operandor-container {
+    width: 52px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #E2E3E5;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .05s;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.item-operandor_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 15px;
+}
+
+.item-operandor-container:hover {
+    border: 2px solid var(--COLOR_BLUE_DEFAULT);
+}
+
+.item-operandor-container:active {
+    color: #FFFFFF;
+    background: var(--COLOR_BLUE_DEFAULT);
+}

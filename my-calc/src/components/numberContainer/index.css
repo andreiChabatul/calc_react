@@ -1,0 +1,11 @@
+.number-container {
+    width: 240px;
+    height: 224px;
+    box-shadow: var(--DEFAULT_SHADOW);
+    background: var(--COLOR_WHITE_DEFAULT);
+    border-radius: 4px;
+    padding: 4px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
