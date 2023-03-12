@@ -12,7 +12,7 @@ const NumberContainer = (props: JSXdrop) => {
 
     const dispatch = useAppDispatch();
     const { dropArr } = useAppSelector(state => state.appState);
-    const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.buttonNumber).length);
+    const IsDoneArea = (!!dropArr.filter(elem => elem.key === TypeJSXElement.buttonNumber).length);
 
     const [{ isDragging }, dragRef] = useDrag({
         type: 'button-add',
@@ -32,7 +32,7 @@ const NumberContainer = (props: JSXdrop) => {
             ${isDragging ? 'container_drag' : ''}
             ${props.value && IsDoneArea ? 'container__disabble' : ''}`}
             ref={!IsDoneArea ? dragRef : null}
-            onDoubleClick={() => dispatch(delete_element(<NumberContainer />))}
+            onDoubleClick={() => dispatch(delete_element(<NumberContainer key={'NumberContainer'} />))}
         >
             {numberControlArr.map((control, index) =>
                 <ItemNumber value={control} key={index} />)

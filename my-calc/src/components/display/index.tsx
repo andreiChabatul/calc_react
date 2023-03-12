@@ -10,7 +10,7 @@ const Display = (props: JSXdrop) => {
 
     const dispatch = useAppDispatch();
     const { dropArr, result, IsResultText, resultCalc } = useAppSelector(state => state.appState);
-    const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.display).length);
+    const IsDoneArea = (!!dropArr.filter(elem => elem.key === TypeJSXElement.display).length);
 
     const [{ isDragging }, dragRef] = useDrag({
         type: 'button-add',
@@ -26,7 +26,7 @@ const Display = (props: JSXdrop) => {
 
     return (
         <div
-            onDoubleClick={() => dispatch(delete_element(<Display />))}
+            onDoubleClick={() => dispatch(delete_element(<Display key={'Display'} />))}
             className={`display-container
             ${isDragging ? 'container_drag' : ''}
             ${props.value && IsDoneArea ? 'container__disabble' : ''}

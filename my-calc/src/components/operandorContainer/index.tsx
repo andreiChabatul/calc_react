@@ -12,7 +12,7 @@ const OperandorContainer = (props: JSXdrop) => {
 
     const dispatch = useAppDispatch();
     const { dropArr } = useAppSelector(state => state.appState);
-    const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.buttonOperandor).length);
+    const IsDoneArea = (!!dropArr.filter(elem => elem.key === TypeJSXElement.buttonOperandor).length);
 
     const [{ isDragging }, dragRef] = useDrag({
         type: 'button-add',
@@ -32,7 +32,7 @@ const OperandorContainer = (props: JSXdrop) => {
             className={`operandor-container
             ${isDragging ? 'container_drag' : ''}
             ${props.value && IsDoneArea ? 'container__disabble' : ''}`}
-            onDoubleClick={() => dispatch(delete_element(<OperandorContainer />))}
+            onDoubleClick={() => dispatch(delete_element(<OperandorContainer key={'OperandorContainer'} />))}
         >
             {operandorArr.map((oper, index) =>
                 <ItemOperandor value={oper} key={index} />

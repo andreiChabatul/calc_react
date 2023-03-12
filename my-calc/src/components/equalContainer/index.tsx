@@ -11,7 +11,7 @@ const EqualsContainer = (props: JSXdrop) => {
 
     const dispatch = useAppDispatch();
     const { dropArr, IsRuntime } = useAppSelector(state => state.appState);
-    const IsDoneArea = (!!dropArr.filter(elem => elem.type.name === TypeJSXElement.equal).length);
+    const IsDoneArea = (!!dropArr.filter(elem => elem.key === TypeJSXElement.equal).length);
 
     const [{ isDragging }, dragRef] = useDrag({
         type: 'button-add',
@@ -28,7 +28,7 @@ const EqualsContainer = (props: JSXdrop) => {
     return (
         <div
             onClick={() => { if (IsRuntime) calculator.egualClick() }}
-            onDoubleClick={() => dispatch(delete_element(<EqualsContainer />))}
+            onDoubleClick={() => dispatch(delete_element(<EqualsContainer key={'EqualsContainer'} />))}
             className={`equals-container
             ${isDragging ? 'container_drag' : ''}
             ${props.value && IsDoneArea ? 'container__disabble' : ''}`}

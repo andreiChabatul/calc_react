@@ -16,13 +16,13 @@ const sliceApp = createSlice({
         drop_add(state: appState, action: PayloadAction<JSX.Element>) {
             state.dropArr.push(action.payload);
             for (let i = 0; i < state.dropArr.length; i++) {
-                if (state.dropArr[i].type.name === TypeJSXElement.display) {
+                if (state.dropArr[i].key === TypeJSXElement.display) {
                     [state.dropArr[0], state.dropArr[i]] = [state.dropArr[i], state.dropArr[0]]
                 }
             }
         },
         delete_element(state: appState, action: PayloadAction<JSX.Element>) {
-            state.dropArr = state.dropArr.filter(element => element.type.name !== action.payload.type.name);
+            state.dropArr = state.dropArr.filter(element => element.key !== action.payload.key);
         },
         set_result(state: appState, action: PayloadAction<string>) {
             state.result = action.payload;
